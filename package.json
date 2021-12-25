@@ -1,7 +1,7 @@
 {
   "name": "donation-socket-repeater",
   "version": "1.0.0",
-  "description": "Receives donations from the tracker via a postback URL, and repeats them via a websocket.",
+  "description": "Receives donations from the tracker via a postback URL, and repeats them via a websocket (updated by hoxi for GSPS).",
   "main": "index.js",
   "scripts": {
     "static": "eslint .",
@@ -10,24 +10,24 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/TipoftheHats/donation-socket-repeater.git"
+    "url": "git+https://github.com/GramyPomagamy/donation-socket-repeater.git"
   },
   "author": "Alex Van Camp",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/TipoftheHats/donation-socket-repeater/issues"
+    "url": "https://github.com/GramyPomagamy/donation-socket-repeater/issues"
   },
-  "homepage": "https://github.com/TipoftheHats/donation-socket-repeater#readme",
+  "homepage": "https://github.com/GramyPomagamy/donation-socket-repeater#readme",
   "devDependencies": {
     "babel-eslint": "^6.1.2",
-    "eslint": "^3.4.0",
-    "eslint-config-xo": "^0.15.4",
-    "eslint-plugin-babel": "^3.3.0"
+    "eslint": "^8.5.0",
+    "eslint-config-xo": "^0.39.0",
+    "eslint-plugin-babel": "^5.3.1"
   },
   "dependencies": {
-    "body-parser": "^1.15.2",
-    "convict": "^1.4.0",
-    "express": "^4.14.0",
-    "socket.io": "^1.4.8"
+    "body-parser": "^1.19.1",
+    "convict": "^6.2.1",
+    "express": "^4.17.2",
+    "socket.io": "^4.4.0"
   }
 }

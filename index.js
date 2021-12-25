@@ -1,4 +1,4 @@
-/* eslint-disable babel/new-cap, new-cap */
+
 'use strict';
 
 const app = require('express')();
@@ -12,22 +12,22 @@ const conf = convict({
 		format: 'port',
 		default: 8080,
 		env: 'PORT',
-		arg: 'port'
+		arg: 'port',
 	},
 	secretKey: {
 		doc: 'The secret key that must be provided in POST requests for them to be accepted.',
 		format: String,
 		default: '',
 		env: 'SECRET_KEY',
-		arg: 'secretKey'
+		arg: 'secretKey',
 	},
 	debug: {
 		doc: 'Whether or not to enable debug logging.',
 		format: Boolean,
 		default: false,
 		env: 'DEBUG',
-		arg: 'debug'
-	}
+		arg: 'debug',
+	},
 }).getProperties();
 
 app.use(bodyParser.json());
@@ -39,7 +39,7 @@ app.get('/', (req, res) => {
 });
 
 // PayPal donations from the tracker are POSTed to us as they come in.
-app.post(`/donation`, (req, res) => {
+app.post('/donation', (req, res) => {
 	if (req.query.key !== conf.secretKey) {
 		res.sendStatus(403);
 		return;
@@ -53,7 +53,7 @@ app.post(`/donation`, (req, res) => {
 		name: req.body.donor__visiblename,
 		rawAmount: req.body.amount,
 		newTotal: req.body.new_total,
-		domain: req.body.domain
+		domain: req.body.domain,
 	};
 
 	io.emit('donation', data);
