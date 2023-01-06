@@ -28,19 +28,27 @@ const conf = convict({
 		env: 'DEBUG',
 		arg: 'debug',
 	},
+	root: {
+		doc: 'The root directory to listen from.',
+		format: String,
+		default: '/',
+		env: 'ROOT_DIR',
+		arg: 'rootDir',
+	}
 }).getProperties();
 
 app.use(bodyParser.json());
 server.listen(conf.port);
 console.log(`Listening on port ${conf.port}.`);
 console.log(`Secret key: ${conf.secretKey}`);
+console.log(`Root dir: ${conf.root}`);
 
-app.get('/', (req, res) => {
+app.get(conf.root, (req, res) => {
 	res.send('Running OK');
 });
 
 // PayPal donations from the tracker are POSTed to us as they come in.
-app.post('/donation', (req, res) => {
+app.post(`${conf.root}/donation`, (req, res) => {
 	if (req.query.key !== conf.secretKey) {
 		res.sendStatus(403);
 		return;
