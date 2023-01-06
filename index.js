@@ -48,7 +48,7 @@ app.get(conf.root, (req, res) => {
 });
 
 // PayPal donations from the tracker are POSTed to us as they come in.
-app.post(`${conf.root}/donation`, (req, res) => {
+app.post(`${conf.root}donation`, (req, res) => {
 	if (req.query.key !== conf.secretKey) {
 		res.sendStatus(403);
 		return;
