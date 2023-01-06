@@ -33,6 +33,7 @@ const conf = convict({
 app.use(bodyParser.json());
 server.listen(conf.port);
 console.log(`Listening on port ${conf.port}.`);
+console.log(`Secret key: ${conf.secretKey}`);
 
 app.get('/', (req, res) => {
 	res.send('Running OK');
