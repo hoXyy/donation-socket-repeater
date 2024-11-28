@@ -2,7 +2,7 @@ services:
   web:
     build: .
     ports:
-      - "127.0.0.1:9567:8080"
+      - "127.0.0.1:8003:8080"
     restart: unless-stopped
     environment:
       - SECRET_KEY=${SECRET_KEY}
