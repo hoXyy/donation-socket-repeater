@@ -4,9 +4,8 @@
   "description": "Receives donations from the tracker via a postback URL, and repeats them via a websocket (updated by hoxi for GSPS).",
   "main": "index.js",
   "scripts": {
-    "static": "eslint .",
-    "test": "npm run static",
-    "start": "node index.js"
+    "start": "node index.js",
+    "lint": "eslint ."
   },
   "repository": {
     "type": "git",
