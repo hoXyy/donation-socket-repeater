@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "lint:report": "eslint --output-file eslint_report.json --format json ."
   },
   "repository": {
     "type": "git",
