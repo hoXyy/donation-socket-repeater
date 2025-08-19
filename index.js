@@ -32,7 +32,7 @@ const conf = convict({
     doc: "The root directory to listen from.",
     format: String,
     default: "/",
-    env: "ROOT_DIR",
+    env: 'ROOT_DIR',
     arg: "rootDir",
   }
 }).getProperties();
