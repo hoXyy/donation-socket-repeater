@@ -18,7 +18,7 @@ const conf = convict({
     doc: "The secret key that must be provided in POST requests for them to be accepted.",
     format: String,
     default: "",
-    env: 'SECRET_KEY',
+    env: "SECRET_KEY",
     arg: "secretKey",
   },
   debug: {
